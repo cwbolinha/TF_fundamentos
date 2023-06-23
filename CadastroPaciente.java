@@ -19,11 +19,15 @@ public void adicionaP(Paciente p){ //Adiciona um paciente no vetor de pacientes.
     else { System.out.println("Vetor ocupado."); }
 }
 public void removeP(int index){ //Remove um paciente do vetor de pacientes.
+    if (index >= maxOcup){
+        System.out.println("Comando inválido");
+    }
+    else{
     pacientes[index] = null;//remove o paciente no índice
     for (int i = index; i < maxOcup; i ++){//um for que passa os outros pacientes "para frente" e organiza o vetor
         pacientes[i] = pacientes[i + 1];
     }
-    maxOcup --; //agora o ultimo indice ocupado é menor
+    maxOcup --;} //agora o ultimo indice ocupado é menor
 }
 public void imprimeVetor(){ //Imprime os pacientes do vetor de pacientes.
     System.out.println("Lista de Pacientes: ");
