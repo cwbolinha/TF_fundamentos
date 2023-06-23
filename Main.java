@@ -2,9 +2,9 @@ package TFinal;
 import java.util.*;
 public class Main {
     private static Scanner sc = new Scanner(System.in);//criação dos objetos de cada classe
-    private static CadastroPaciente listaPac = new CadastroPaciente();
-    private static Medicamento remed1, remed2, remed3, remed4;
-    private static Medicamento [] listaMedicamentos = new Medicamento[4];
+    private static CadastroPaciente listaPac = new CadastroPaciente(); 
+    private static Medicamento remed1, remed2, remed3, remed4; 
+    private static Medicamento [] listaMedicamentos = new Medicamento[4]; //cria um vetor de cada medicamento
     
 public static void main (String [] args){
     remed1 = new Medicamento("CovixUltra", 0);//inicialização de cada medicamento
@@ -70,17 +70,17 @@ public static void menuAçoes(int escolha){
                 listaPac.adicionaP(p);
                 sc.nextLine();//fazer o scanner limpar o buffer para evitar que de erro em futuros inputs
                 break;
-        case 2: listaPac.posicoesOcupadas(); 
+        case 2: listaPac.posicoesOcupadas();//chama o método que identifica as posições ocupadas no vetor de pacientes
                 System.out.println("\nDigite a posição do paciente que deseja remover: ");
                 int index = sc.nextInt();
-                listaPac.removeP(index - 1);
+                listaPac.removeP(index - 1); //chama o método para remover pacientes do vetor
                 sc.nextLine();
                 break;
-        case 3: listaPac.imprimeVetor();
+        case 3: listaPac.imprimeVetor(); //chama o método que imprime o vetor de pacientes
                 break;
-        case 4: listaPac.posicoesOcupadas();
+        case 4: listaPac.posicoesOcupadas(); //chama o método que identifica posições ocupadas dentro do vetor
                 break;
-        case 5: listaPac.ordemAlfabetica();;
+        case 5: listaPac.ordemAlfabetica();; //chama o método que ordena o nome dos pacientes em ordem alfabética 
                 break;
         case 6: System.out.println("\nPorcentagem de diagnósticos:"); //imprime as porcentagens chamando o método para cada medicamento
                 System.out.println("Covid: "+listaPac.percent()[0]+"%");
@@ -88,7 +88,7 @@ public static void menuAçoes(int escolha){
                 System.out.println("Chikungunya: "+listaPac.percent()[2] + "%");
                 System.out.println("Dengue: "+listaPac.percent()[3] + "%");
                 break;
-        case 7: System.out.println("\n1. "+remed1.toString()+"\n2. "+remed2.toString()+"\n3. "+remed3.toString()+"\n4. "+remed4.toString());
+        case 7: System.out.println("\n1. "+remed1.toString()+"\n2. "+remed2.toString()+"\n3. "+remed3.toString()+"\n4. "+remed4.toString()); //chama o método de representação de string oara cada remédio
                 break;
         case 8: System.out.println("Digite o nº do medicamento que deseja alterar o estoque: ");
                 System.out.println("1: CovixUltra"+"\n2: Zicox"+"\n3: ChikTop"+"\n4: Denguenit");
@@ -96,9 +96,13 @@ public static void menuAçoes(int escolha){
                 System.out.println("\n"+listaMedicamentos[r - 1].toString()); //imprime as informações do medicamento escolhido
                 System.out.println("Digite o número do novo estoque");
                 int n = sc.nextInt();
-                listaMedicamentos[r - 1].setQntcx(n);
+                listaMedicamentos[r - 1].setQntcx(n); //Atualiza a contidade do medicamento no estoque
                 sc.nextLine();
-                break; }}
+                break; 
+        default: System.out.println("Comando inválido"); 
+                sc.nextLine();
+                break;
+        }}
         catch (Exception e){
         System.out.println("Comando inválido");
         sc.nextLine();
