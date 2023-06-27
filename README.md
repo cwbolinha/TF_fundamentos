@@ -15,3 +15,5 @@ Durante a execução do trabalho nos deparamos com vários questionamentos:
 Fontes: 
 - https://www.tutorialspoint.com/how-to-sort-a-string-in-java-alphabetically-in-java 
 - https://www.ime.usp.br/~pf/algoritmos/aulas/array.html
+- Chat GPT para correção de trechos
+- Monitoria e ajuda de colegas
